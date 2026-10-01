@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ background: black
+ 
+}
+
+/* Open Modal Button */
+
+.openbtn {
+    padding: 12px 25px;
+
+  background-color: grey;
+  color: white;
+
+  border: none;
+  border-radius: 5px;
+
+  font-size: 16px;
+  cursor: pointer;
+
+  animation: slideFromLeft 0.8s ease;
+}
+
+@keyframes slideFromTop {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.openbtn {
+  animation: slideFromTop 0.8s ease;
+}
+
+.openbtn:hover {
+  background-color: black;
+  color: orangered;
+}
+
+
+/* Modal */
+
+#modal {
+  position: fixed;
+
+  width: 500px;
+  height: 350px;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+
+  background-color: black;
+}
+
+
+/* Modal Image */
+
+#modal img {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  top: 0;
+  left: 0;
+
+  z-index: 1;
+}
+
+
+/* Image ke upar halka dark layer */
+
+#modal::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.35);
+
+  z-index: 2;
+}
+
+
+/* Heading Image ke upar */
+
+#modal h1 {
+  position: relative;
+
+  z-index: 3;
+
+  color: lightseagreen;
+
+  text-align: center;
+
+  font-size: 28px;
+
+  padding: 20px;
+
+  text-shadow: 2px 2px 5px black;
+}
+
+
+/* Close Button */
+
+.btn1 {
+  position: absolute;
+
+  top: 10px;
+  right: 12px;
+
+  z-index: 4;
+
+  width: 30px;
+  height: 30px;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: black;
+
+  color: goldenrod;
+
+  font-size: 25px;
+
+  cursor: pointer;
+}
+
+.btn1:hover {
+  background-color: green;
+  color: yellow;
+}
+
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+  #modal {
+    width: 90%;
+    height: 300px;
+  }
+
+  #modal h1 {
+    font-size: 22px;
+  }
+
+}
